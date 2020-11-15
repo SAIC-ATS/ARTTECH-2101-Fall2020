@@ -64,6 +64,7 @@ header > * {
 .instructor {
     font-size: 1rem;
     margin: 0 3% 0 5%;
+    font-weight: 100;
 }
 
 .instructor span {
@@ -71,7 +72,7 @@ header > * {
 }
 
 .instructor > * {
-    font-weight: 200;
+    font-weight: 100;
 }
 
 /* .about {
@@ -83,8 +84,27 @@ header > * {
     padding: 2px;
 } */
 
-.about:hover {
+/* .about:hover {
     color: salmon;
+} */
+
+.section {
+    width: 100%;
+    /* margin: 10px 0px; */
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    color: #111;
+    background-color: #fefefe;
+    font-size: 1rem;
+    margin: 40px 3% 40px 10%;
+}
+
+.section > * {
+    font-weight: 100;
+}
+
+.section span {
+    display: inline-block;
 }
 
 .main-link {
@@ -168,6 +188,15 @@ header > * {
 
 .screen-lock {
     display: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 2em 5%;
+    padding: 0;
 }
 
 .footer {

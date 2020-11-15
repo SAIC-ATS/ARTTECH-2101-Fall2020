@@ -3,9 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet"> 
+
+    <script src="libs/jquery-3.5.1.min.js"></script>
+    <script src="libs/p5.min.js"></script>
+
+    <title>CVML Spring 2020</title>
 </head>
 <body>
-    Hello, world. 
+    <div class="wrapper">
+        <div class="top-bar">
+            <a class="home" href="..">&lt;</a>
+        </div>
+        
+        <header class="header">
+            <h1 class="site-title">ATS Practices</h1>
+            <h2 class="site-subtitle">Fall 2020 - <span>SAIC Art and Technology Studies</span></h2>
+            <div class="instructor">
+                <h3><b>Instructors:</b> <span>Jenna Boyles,</span> <span>Ziv Ze'ev Cohen,</span> <span>Kristin McWharter,</span> <span>Alan Perry,</span> <span>Christine Shallenberg</span></h3>
+                <h3><b>TA's:</b> Blake Fall-Conroy, <span>Leslie Zeng</span></h3>
+            </div>
+            <!-- <a class="about" href="about">About</a> -->
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="gallery">
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student1-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student2-thumb.jpg" alt="Student 2" class="main-image">
+                    </a>
+                    <h3 class="student-name">Martin Martin</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student3-thumb.jpg" alt="Student 3" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">Quarantine Dreams</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student1-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student1-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Meredith Jones</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student3-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student2-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student3-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">My Slick Title</h3>
+                </div>
+                <div class="student-cell">
+                    <a href="Student 1"></a>
+                        <img src="thumbs/student1-thumb.jpg" alt="Student 1" class="main-image">
+                    </a>
+                    <h3 class="student-name">Student Name</h3>
+                    <h3 class="project-title">The Title of this project</h3>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <h3> </h3>
+            <!-- <pre class="end">
+                _____/\\\\\\\\\_______________________________________________________________________________/\\\_____________/\\\\\\\\\\\\\\\_______________________________/\\\_______™_        
+                ___/\\\\\\\\\\\\\____________________________________________________________________________\/\\\____________\///////\\\/////_______________________________\/\\\_________       
+                 __/\\\/////////\\\___________________/\\\____________________________________________________\/\\\__________________\/\\\____________________________________\/\\\_________      
+                  _\/\\\_______\/\\\__/\\/\\\\\\\___/\\\\\\\\\\\____________/\\\\\\\\\_____/\\/\\\\\\__________\/\\\__________________\/\\\___________/\\\\\\\\______/\\\\\\\\_\/\\\_________     
+                   _\/\\\\\\\\\\\\\\\_\/\\\/////\\\_\////\\\////____________\////////\\\___\/\\\////\\\____/\\\\\\\\\__________________\/\\\_________/\\\/////\\\___/\\\//////__\/\\\\\\\\\\__    
+                    _\/\\\/////////\\\_\/\\\___\///_____\/\\\__________________/\\\\\\\\\\__\/\\\__\//\\\__/\\\////\\\__________________\/\\\________/\\\\\\\\\\\___/\\\_________\/\\\/////\\\_   
+                     _\/\\\_______\/\\\_\/\\\____________\/\\\_/\\_____________/\\\/////\\\__\/\\\___\/\\\_\/\\\__\/\\\__________________\/\\\_______\//\\///////___\//\\\________\/\\\___\/\\\_  
+                      _\/\\\_______\/\\\_\/\\\____________\//\\\\\_____________\//\\\\\\\\/\\_\/\\\___\/\\\_\//\\\\\\\/\\_________________\/\\\________\//\\\\\\\\\\__\///\\\\\\\\_\/\\\___\/\\\_ 
+                       _\///________\///__\///______________\/////_______________\////////\//__\///____\///___\///////\//_______2020_______\///__________\//////////_____\////////__\///____\///__
+               
+               </pre> -->
+               <pre class="end">
+ ______  ______  ______     ______  __   __  _____       ______  ______  ______  __  __    
+/\  __ \/\  == \/\__  _\   /\  __ \/\ "-.\ \/\  __-.    /\__  _\/\  ___\/\  ___\/\ \_\ \   
+\ \  __ \ \  __<\/_/\ \/   \ \  __ \ \ \-.  \ \ \/\ \   \/_/\ \/\ \  __\\ \ \___\ \  __ \  
+ \ \_\ \_\ \_\ \_\ \ \_\    \ \_\ \_\ \_\\"\_\ \____-      \ \_\ \ \_____\ \_____\ \_\ \_\ 
+  \/_/\/_/\/_/\/_/  \/_/     \/_/\/_/\/_/ \/_/\/____/       \/_/  \/_____/\/_____/\/_/\/_/ 
+                                                                                    
+                                                                            2020      
+               </pre>
+        </footer>
+        <!-- <div class="menu-background"></div> -->
+    </div>
+    <script src="scripts/home.js"></script>
 </body>
 </html>

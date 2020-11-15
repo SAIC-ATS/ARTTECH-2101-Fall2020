@@ -1,0 +1,184 @@
+/* top, right bottom left */
+
+* { margin: 0; padding: 0;}
+
+.top-bar{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, 0);
+    display: flex;
+    width: 96vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.home {
+    text-decoration: none;
+    color: #111;
+    font-size: 1rem;
+    opacity: .45;
+}
+
+
+
+header {
+    width: 100%;
+    margin: 10px 0px;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    color: #111;
+    background-color: #fefefe;
+}
+
+header > * {
+    margin: .75 rem;
+}
+
+.site-title {
+    width: 100%;
+    margin: 20px 0px 0px;
+    font-size: 4em;
+    text-align: center;
+    font-weight: 100;
+}
+
+.site-title > a {
+    text-decoration: none;
+    color: black;
+}
+
+.site-subtitle {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 10px 3%;
+    text-align: center;
+}
+
+.site-subtitle span {
+    display: inline-block;
+}
+
+.instructor {
+    font-size: 1rem;
+    margin: 0 3% 0 5%;
+}
+
+.instructor span {
+    display: inline-block;
+}
+
+.instructor > * {
+    font-weight: 200;
+}
+
+/* .about {
+    display: block;
+    text-decoration: none;
+    color: #111;
+    font-weight: 200;
+    font-size: calc(1rem + .1vw);
+    padding: 2px;
+} */
+
+.about:hover {
+    color: salmon;
+}
+
+.main-link {
+    text-decoration: none;
+    color: #111;
+    font-size: calc(1.25rem + 1vw);
+    padding: 2px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px;
+}
+    
+.gallery {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    width: 90%;
+    grid-gap: 20px;
+}
+
+.student-cell {
+    position: relative;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    color: #111;
+    background-color: #fefefe;
+    font-size: .75em;
+}
+
+.main-image {
+    border-radius: 10px 10px 0px 0px;
+}
+.student-name {
+    font-weight: 400;
+    margin: 5px 0 0 0;
+}
+
+.project-title {
+    font-weight: 100;
+    font-style: italic;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1110;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fefefe00;
+}
+
+.coming-soon {
+    position: relative;
+}
+
+.student-cell img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: -5px;
+}
+
+.overlay {
+    transition: background-color .25s, color .25s;
+}
+
+.image-card:hover .overlay {
+    background-color: #111b;
+    color: salmon;
+}
+
+.screen-lock {
+    display: none;
+}
+
+.footer {
+    width: 100%;
+    margin: 60px 0 30px 0;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(119, 119, 119);
+    background-color: #fefefe;
+}
+
+.end {
+    font-size: .5vw;
+}

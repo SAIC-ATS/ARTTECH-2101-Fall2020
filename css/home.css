@@ -63,10 +63,10 @@ header > * {
 }
 
 .class-description {
-    font-weight: 100;
     font-size: .75rem;
     margin: 0 15% 3% 15%;
     text-align: justify;
+    font-weight: 100;
 }
 
 .instructor {
@@ -79,9 +79,9 @@ header > * {
     display: inline-block;
 }
 
-.instructor > * {
+/* .instructor > * {
     font-weight: 100;
-}
+} */
 
 /* .about {
     display: block;

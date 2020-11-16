@@ -226,5 +226,6 @@ hr {
 }
 
 .end {
-    font-size: .5vw;
+    font-size: calc(6px + .1vw);
+    
 }

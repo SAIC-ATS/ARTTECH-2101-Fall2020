@@ -6,7 +6,8 @@ and (-webkit-min-device-pixel-ratio: 2) { */
 @media only screen and (max-width: 800px) {
     
     .class-description {
-        margin: 0 5% 25px 5%;
+        margin: 0 auto 25px auto;
+        width: 90%;
     }
 
 }
@@ -35,7 +36,8 @@ and (-webkit-min-device-pixel-ratio: 2) { */
   }
 
 .class-description {
-    margin: 0 5% 25px 5%;
+    margin: 0 auto 25px auto;
+    width:90%;
 }
 
   .instructor {
@@ -51,7 +53,7 @@ and (-webkit-min-device-pixel-ratio: 2) { */
     margin: 40px 5% 40px 5%;
 }
 
-  .overlay {
+  /* .overlay {
       position: absolute;
       left: 0;
       top: 0;
@@ -64,7 +66,7 @@ and (-webkit-min-device-pixel-ratio: 2) { */
       justify-content: center;
       align-items: center;
       color: #fefefe;
-  }
+  } */
 
   #sketch-container {
       overflow-x: hidden;
@@ -139,6 +141,11 @@ and (-webkit-min-device-pixel-ratio: 2) { */
       position: relative;
   }
   
+  .section {
+      max-width: 90%;
+      margin: 40px 10% 40px 20%;
+  }
+
   .grid-container{
       margin-bottom: 4vh;
       max-width: 100%;

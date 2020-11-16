@@ -64,9 +64,11 @@ header > * {
 
 .class-description {
     font-size: .75rem;
-    margin: 0 15% 3% 15%;
+    margin: 0 auto 25px auto;
     text-align: justify;
     font-weight: 100;
+    width:70%;
+    max-width: 1000px;
 }
 
 .instructor {
@@ -96,24 +98,7 @@ header > * {
     color: salmon;
 } */
 
-.section {
-    width: 100%;
-    /* margin: 10px 0px; */
-    text-align: left;
-    font-family: 'Roboto Mono', monospace;
-    color: #111;
-    background-color: #fefefe;
-    font-size: 1rem;
-    margin: 40px 25px 40px 10%;
-}
 
-.section > * {
-    font-weight: 100;
-}
-
-.section span {
-    display: inline-block;
-}
 
 .main-link {
     text-decoration: none;
@@ -129,9 +114,38 @@ header > * {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px 0px;
+    margin: 0px auto;
 }
     
+.section {
+    
+    width: 100%;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    color: #111;
+    background-color: #fefefe;
+    font-size: 1rem;
+    margin: 40px 20px 40px 20%;
+}
+
+.section > * {
+    font-weight: 100;
+}
+
+.section span {
+    display: inline-block;
+}
+
+hr {
+    /* display: block; */
+    height: 1px;
+    width: 90%;
+    border: 0;
+    border-top: 2px solid rgb(219, 219, 219);
+    margin: 2em 5%;
+    padding: 0;
+}
+
 .gallery {
     display: grid;
     justify-content: center;
@@ -171,7 +185,7 @@ header > * {
     font-style: italic;
 }
 
-.overlay {
+/* .overlay {
     position: absolute;
     left: 0;
     top: 0;
@@ -182,11 +196,11 @@ header > * {
     justify-content: center;
     align-items: center;
     color: #fefefe00;
-}
+} */
 
-.coming-soon {
+/* .coming-soon {
     position: relative;
-}
+} */
 
 .student-cell img {
     width: 100%;
@@ -194,27 +208,20 @@ header > * {
     margin-bottom: -5px;
 }
 
-.overlay {
+/* .overlay {
     transition: background-color .25s, color .25s;
-}
+} */
 
-.image-card:hover .overlay {
+/* .image-card:hover .overlay {
     background-color: #111b;
     color: salmon;
-}
+} */
 
 .screen-lock {
     display: none;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 2em 5%;
-    padding: 0;
-}
+
 
 .footer {
     width: 100%;

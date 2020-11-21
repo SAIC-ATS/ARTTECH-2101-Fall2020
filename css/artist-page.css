@@ -21,6 +21,17 @@
     max-width: 450px;
     font-size: 1.25rem;
     font-weight: 200;
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 12px;
+    
+}
+
+.page-subtitle span {
+    display: inline-block;
 }
 
 .socials {

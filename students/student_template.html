@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home.css">
+    <!-- <link rel="stylesheet" href="../css/home.css"> -->
     <link rel="stylesheet" href="../css/artist-page.css">
-    <link rel="stylesheet" href="../css/mobile.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet">
-    <script src="../libs/jquery-3.5.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="../css/mobile.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet"> 
+    <!-- <script src="../libs/jquery-3.5.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+
     <title>Student Name</title>
 </head>
 <body>
@@ -16,40 +19,168 @@
         <a class="home" href="..">&lt;</a>
     </div>
     <header class="header">
-        <h1 class="page-title"><a href="..">Student Name</a></h1> 
-        <h2 class="page-subtitle">Instructors: <span>Alan Perry, Ziv Cohen</span></h2>
+        <h1 class="page-title"><a href="..">Ruiying Xiong</a></h1> 
+        <h2 class="page-subtitle">Instructors: <span>Kristin McWharter, Jenna Boyles</span></h2>
     </header>
     <main class="main-content">
         <!-- Thumbnail -->
-        <figure class="image">     
+        <!-- <figure class="image">     
             <img src="../thumbs/student1-thumb.jpg" alt="Student 1">
-        </figure>
+        </figure> -->
 
         <!-- Embed video or p5js -->
-        <figure>
-            <iframe src="https://editor.p5js.org/kmcwha/embed/-b2BOK4ve" width="512" height="512"></iframe>
-        </figure>
+        <div class="student-content">
+            <iframe class="frame-content" src="https://editor.p5js.org/bbfc/embed/6-GC_5Vo"></iframe>
+            <!-- <img id="test" src="../thumbs/student3-thumb.jpg" alt="Student 3"> -->
+        </div>
         
 
         <!-- Description -->
         <div class="written-content">
-            <h3 class="section-title">Title</h3>
-            <p>Description</p>
+            <h3 class="section-title">Lerpy Lerpy</h3>
+            <p>This is my final project analyzing the aesthetic significance of lerping. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
 
         <!-- More work images -->
-        <div class="grid-container">
+        <!-- <div class="grid-container">
             <img src="../thumbs/student2-thumb.jpg" alt="Student 2">
             <img src="../thumbs/student3-thumb.jpg" alt="Student 3">
-        </div>
+        </div> -->
 
         <!-- Additional description if applicable -->
-        <div class="written-content">
+        <!-- <div class="written-content">
             <h3 class="section-title">Title</h3>
             <p>Description</p>
-        </div>
+        </div> -->
     </main>
-    <div class="modal-background"></div>
-    <script src="../scripts/gallery-utils.js"></script>
+    <!-- <div class="modal-background"></div> -->
+    <!-- <script src="../scripts/gallery-utils.js"></script> -->
+
+    <script>
+        /**
+         * Scaling <iframe>-elements.
+         * 
+         * Emanuel Kluge
+         * twitter.com/Herschel_R
+         */
+         (function (win, doc) {
+        
+        /** Below this point the scaling takes effect. */
+        //set this for each iframe width
+        //width of the p5 sketch plus a 20-30
+        //or width of iframe page
+        var BREAKPOINT = 830;
+        
+        /**
+         * The `window.resize`-callback gets throttled
+         * to an interval of 30ms.
+        */
+        var THROTTLE = 30;
+        
+        /** Just the declaration. Definition comes later. */
+        var IFRAME_HEIGHT;
+        
+        var iframe = doc.getElementsByTagName('iframe')[0],
+            timestamp = 0;
+        
+        /** Defining the inital iframe-height. */
+        IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
+        
+        /**
+         * Takes an object with CSS-transform-properties
+         * and generates a cross-browser-ready style string.
+         *
+         * @param  {Object} obj
+         * @return {String}
+         */
+        function transformStr(obj) {
+          var obj = obj || {},
+              val = '',
+              j;
+          for ( j in obj ) {
+            val += j + '(' + obj[j] + ') ';
+          }
+          val += 'translateZ(0)';
+          return '-webkit-transform: ' + val + '; ' +
+                  '-moz-transform: ' + val + '; ' +
+                  'transform: ' + val;
+        }
+        
+        /**
+         * Scaling the iframe if necessary.
+         *
+         * @return {Function}
+         */
+        function onResize() {
+        
+          var now = +new Date,
+              winWidth = win.innerWidth,
+              noResizing = winWidth > BREAKPOINT,
+              scale,
+              width,
+              height,
+              offsetLeft;
+          
+          if ( now - timestamp < THROTTLE || noResizing ) {
+            /** Remove the style-attr if we're out of the "scaling-zone". */
+            noResizing && iframe.hasAttribute('style') && iframe.removeAttribute('style');
+            return onResize;
+          }
+          
+          timestamp = now;
+          
+          /**
+           * The required scaling; using `Math.pow` to get
+           * a safely small enough value.
+           */
+          scale = Math.pow(winWidth / BREAKPOINT, 1.2);
+          
+          /**
+           * To get the corresponding width that compensates
+           * the shrinking and thus keeps the width of the
+           * iframe consistent, we have to divide 100 by the
+           * scale. This gives us the correct value in percent.
+           */
+          width = 100 / scale;
+          
+          /**
+           * We're using the initial height and the compen-
+           * sating width to compute the compensating height
+           * in px.
+           */
+          height = IFRAME_HEIGHT / scale;
+          
+          /**
+           * We have to correct the position of the iframe,
+           * when changing its width.
+           */
+          offsetLeft = (width - 100) / 2;
+          
+          /** Setting the styles. */
+          iframe.setAttribute('style', transformStr({
+            scale: scale,
+            translateX: '-' + offsetLeft + '%'
+          }) + '; width: ' + width + '%; ' + 'height: ' + height + 'px');
+          
+          return onResize;
+        
+        }
+        
+        /** Listening to `window.resize`. */
+        win.addEventListener('resize', onResize(), false);
+        
+        })(window.self, document);
+
+        //         This script, copyright 2018 Emanuel Kluge
+
+        // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+        // The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        // THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    </script>
+
+
 </body>
 </html>

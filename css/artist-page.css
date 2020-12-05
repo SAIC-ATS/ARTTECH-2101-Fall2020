@@ -93,43 +93,27 @@ a:hover {
 .student-content {
     width: 100%;
     margin: 0 auto;
-    /* display:block; */
     background-color: rgb(219, 159, 159);
-    
+    /* height:420px; */
 }
 
-.frame-content {
+iframe {
     display: block;
-    width:100%;
-    height:500px;
-
-    border: 1px solid #666;
+    width: 100%;
+    height: 420px;
+    border: 1px solid rgb(0, 255, 21);
     box-sizing: border-box;
     transform-origin: center top;
     transition: transform .05s linear;
     backface-visibility: hidden;
+  }
 
-    /* -ms-zoom: 0.75; */
-    /* -moz-transform: scale(0.75); */
-    /* -moz-transform-origin: 0 0; */
-    /* -o-transform: scale(0.75); */
-    /* -o-transform-origin: 0 0; */
-    /* -webkit-transform: scale(0.75); */
-    /* -webkit-transform-origin: 0 0; */
-}
-/* 
-.student-content img{
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-} */
-
-.student-content iframe {
+/* .student-content iframe {
     display: block;
     margin: 0 auto;
     border:none;
     width: 100%;
-}
+} */
 
 #
 

@@ -75,7 +75,7 @@
          * The `window.resize`-callback gets throttled
          * to an interval of 30ms.
         */
-        var THROTTLE = 30;
+        var THROTTLE = 50;
         
         /** Just the declaration. Definition comes later. */
         var IFRAME_HEIGHT;
@@ -85,6 +85,7 @@
         
         /** Defining the inital iframe-height. */
         IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
+        // IFRAME_HEIGHT = parseInt(430);
         
         /**
          * Takes an object with CSS-transform-properties
@@ -116,7 +117,7 @@
           var now = +new Date,
               winWidth = win.innerWidth,
               noResizing = winWidth > BREAKPOINT,
-              scale,
+              scale, 
               width,
               height,
               offsetLeft;
@@ -133,8 +134,8 @@
            * The required scaling; using `Math.pow` to get
            * a safely small enough value.
            */
-          scale = Math.pow(winWidth / BREAKPOINT, 1.2);
-          
+        //   scale = Math.pow(winWidth / BREAKPOINT, 1.2);
+          scale = (winWidth-20)/BREAKPOINT;
           /**
            * To get the corresponding width that compensates
            * the shrinking and thus keeps the width of the
@@ -148,8 +149,11 @@
            * sating width to compute the compensating height
            * in px.
            */
-          height = IFRAME_HEIGHT / scale;
-          
+           height = 420;
+        //   height = IFRAME_HEIGHT * scale;
+
+        //original:
+        //height = IFRAME_CONTENT / scale;
           /**
            * We have to correct the position of the iframe,
            * when changing its width.
@@ -161,7 +165,7 @@
             scale: scale,
             translateX: '-' + offsetLeft + '%'
           }) + '; width: ' + width + '%; ' + 'height: ' + height + 'px');
-          
+
           return onResize;
         
         }

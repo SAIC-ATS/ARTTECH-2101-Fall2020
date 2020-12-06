@@ -14,7 +14,7 @@
 
     <title>Student Name</title>
 </head>
-<body>
+<body id="body1">
     <div class="top-bar">
         <a class="home" href="..">&lt;</a>
     </div>
@@ -30,6 +30,7 @@
 
         <!-- Embed video or p5js -->
         <div class="student-content">
+            <button type="button" onclick="myFunction()">Set background color</button>
             <!-- <iframe class="frame-content" src="https://editor.p5js.org/bbfc/embed/6-GC_5Vo"></iframe> -->
             <iframe class="frame-content" src="https://editor.p5js.org/bbfc/embed/zWoNKCFvb"></iframe>
             <!-- <img id="test" src="../thumbs/student3-thumb.jpg" alt="Student 3"> -->
@@ -56,6 +57,21 @@
     </main>
     <!-- <div class="modal-background"></div> -->
     <!-- <script src="../scripts/gallery-utils.js"></script> -->
+
+    <script>
+        function myFunction() {
+            document.body.style['overflow-y'] = "hidden";
+            if(document.body.style['background-color'] === "red"){
+                document.body.style['background-color'] = "blue";
+                document.body.style['touch-action'] = "auto";
+            } else {
+                document.body.style['background-color'] = "red";
+                document.body.style['touch-action'] = "none";
+            }
+        }
+        </script>
+
+
 
     <script>
         /**

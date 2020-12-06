@@ -84,8 +84,8 @@
             timestamp = 0;
         
         /** Defining the inital iframe-height. */
-        IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
-        // IFRAME_HEIGHT = parseInt(430);
+        // IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
+        IFRAME_HEIGHT = parseInt(430);
         
         /**
          * Takes an object with CSS-transform-properties
@@ -134,8 +134,8 @@
            * The required scaling; using `Math.pow` to get
            * a safely small enough value.
            */
-        //   scale = Math.pow(winWidth / BREAKPOINT, 1.2);
-          scale = (winWidth-20)/BREAKPOINT;
+          scale = Math.pow(winWidth / BREAKPOINT, 1.2);
+        //   scale = (winWidth-20)/BREAKPOINT;
           /**
            * To get the corresponding width that compensates
            * the shrinking and thus keeps the width of the
@@ -153,7 +153,7 @@
         //   height = IFRAME_HEIGHT * scale;
 
         //original:
-        //height = IFRAME_CONTENT / scale;
+        // height = IFRAME_CONTENT / scale;
           /**
            * We have to correct the position of the iframe,
            * when changing its width.

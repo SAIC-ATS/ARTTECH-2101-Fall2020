@@ -1,6 +1,8 @@
-body {
+html, body {
     padding: 0px;
     margin: 0 auto;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .top-bar{

@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
     <!-- <link rel="stylesheet" href="../css/home.css"> -->
     <link rel="stylesheet" href="../css/artist-page.css">
     <!-- <link rel="stylesheet" href="../css/mobile.css"> -->
@@ -64,9 +65,11 @@
             if(document.body.style['background-color'] === "red"){
                 document.body.style['background-color'] = "blue";
                 document.iframe.style['touch-action'] = "auto";
+                document.body.style['overflow-y'] = "auto";
             } else {
                 document.body.style['background-color'] = "red";
                 document.iframe.style['touch-action'] = "none";
+                document.body.style['overflow-y'] = "hidden";
             }
         }
         </script>

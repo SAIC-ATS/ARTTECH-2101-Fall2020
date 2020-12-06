@@ -112,6 +112,7 @@ iframe {
     transform-origin: center top;
     transition: transform .05s linear;
     backface-visibility: hidden;
+    overflow:hidden;
   }
 
   .written-content {

@@ -91,12 +91,13 @@ a:hover {
 }
 
 .student-content {
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
     /* background-color: rgb(219, 159, 159); */
     /* height:420px; */
     height: 0px;
     padding-bottom: clamp(1px, 50%, 420px);
+    text-align: center;
 }
 
 iframe {

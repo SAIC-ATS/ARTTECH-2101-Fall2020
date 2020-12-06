@@ -70,7 +70,7 @@
         //set this for each iframe width
         //width of the p5 sketch plus a 20-30
         //or width of iframe page
-        var BREAKPOINT = 830;
+        var BREAKPOINT = 560;
         
         /**
          * The `window.resize`-callback gets throttled
@@ -85,8 +85,8 @@
             timestamp = 0;
         
         /** Defining the inital iframe-height. */
-        // IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
-        IFRAME_HEIGHT = parseInt(430);
+        IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
+        // IFRAME_HEIGHT = parseInt(830);
         
         /**
          * Takes an object with CSS-transform-properties
@@ -150,7 +150,7 @@
            * sating width to compute the compensating height
            * in px.
            */
-           height = 420;
+           height = 430;
         //   height = IFRAME_HEIGHT * scale;
 
         //original:

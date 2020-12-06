@@ -88,15 +88,15 @@ a:hover {
     margin: auto;
     margin-bottom: 80px;
     width: 100%;
+    text-align: center;
 }
 
 .student-content {
     width: 95%;
     margin: 0 auto;
-    /* background-color: rgb(219, 159, 159); */
-    /* height:420px; */
     height: 0px;
-    padding-bottom: clamp(1px, 50%, 420px);
+    /* adjust the percentage here for iframe height */
+    padding-bottom: clamp(1px, 75%, 420px);
     text-align: center;
 }
 
@@ -111,6 +111,21 @@ iframe {
     transition: transform .05s linear;
     backface-visibility: hidden;
   }
+
+  .written-content {
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    min-width: 150px;
+    margin: 40px auto calc(30px + 5vh) auto;
+    /* margin: 40px; */
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.written-content p {
+    margin-bottom:  20px;
+}
 
 /* .student-content iframe {
     display: block;
@@ -196,18 +211,7 @@ iframe {
     /* position: static; */
 /* } */
 
-.written-content {
-    width: 80%;
-    max-width: 800px;
-    min-width: 150px;
-    margin: 40px auto calc(30px + 5vh) auto;
-    text-align: justify;
-    font-size: 1rem;
-}
 
-.written-content p {
-    margin-bottom:  20px;
-}
 
 .section-title {
     font-size: 1.25rem;

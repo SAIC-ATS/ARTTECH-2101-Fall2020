@@ -95,7 +95,7 @@ header {
 
 .student-content {
     width: 95%;
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: 0 auto;
     height: 0px;
     /* Adjust padding in internal css on student page*/ 

@@ -17,7 +17,11 @@
 
         /* Adjust the percentage here for iframe height. Percent here must be (height/width)*100 of iframe to space the title from the bottom properly. So if iframe is 500px wide and 600px tall, (600/500)*100 = 120% 
         Also put the iframe height in pixels here and in iframe{height: } below */
-        .student-content {padding-bottom: clamp(1px, 315%, 2500px);}
+        .student-content {
+            padding-bottom: clamp(1px, 315%, 2500px);
+            max-width: 800px;
+        }
+        
         iframe {
             height:2500px;
             max-width: 800px;

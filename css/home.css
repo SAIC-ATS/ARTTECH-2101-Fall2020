@@ -83,6 +83,7 @@ header > * {
 }
 
 .instructor span {
+    margin: 0 0 -5px 0; /* bottom */
     display: inline-block;
 }
 
@@ -138,6 +139,7 @@ header > * {
 }
 
 .section span {
+    margin: 0 0 -5px 0; /* bottom */
     display: inline-block;
 }
 

@@ -63,6 +63,7 @@ header > * {
 }
 
 .site-subtitle span {
+    margin: 0 0 -7px 0; /* bottom */
     display: inline-block;
 }
 

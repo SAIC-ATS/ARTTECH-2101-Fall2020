@@ -18,12 +18,12 @@
         /* Adjust the percentage here for iframe height. Percent here must be (height/width)*100 of iframe to space the title from the bottom properly. So if iframe is 500px wide and 600px tall, (600/500)*100 = 120% 
         Also put the iframe height in pixels here and in iframe{height: } below */
         .student-content {
-            padding-bottom: clamp(1px, 44%, 1800px);
-            /* max-width:800px; */
+            padding-bottom: clamp(1px, 73.3%, 1705px);
+            max-width:1750px;
         }
         iframe {
-            height:800px;
-            /* max-width:800px; */
+            height:1250px;
+            max-width:1750px;
         }
     
     </style>
@@ -43,25 +43,26 @@
         <h2 class="page-subtitle">Instructors: <span>Ziv Ze'ev Cohen, Alan Perry</span></h2>
     </header>
      
-    <main class="main-content">
+    <main class="main-content" style="">
 
         <div class="student-content" style="">
-
+            <br/>
             <!-- p5 presentation link goes here -->
-            <a class="fullscreen" href="https://editor.p5js.org/zhu4/present/hlxGTBuR7">fullscreen</a>
+            <h3 class="section-title" style="text-align:left">Evolution Record: Natural Artificial, <span class="date">2020</span></h3>
+            <a class="fullscreen" style="text-align:left; font-size:.75rem;" href="https://editor.p5js.org/zhu4/present/hlxGTBuR7">[make fullscreen]</a>
             
             <!-- iframe p5 embed link goes here -->
             <!-- <iframe src="https://editor.p5js.org/bbfc/embed/zWoNKCFvb"></iframe> -->
-            <iframe src="https://editor.p5js.org/zhu4/embed/hlxGTBuR7"></iframe>
+            <iframe style="float:center;" src="https://editor.p5js.org/zhu4/embed/hlxGTBuR7"></iframe>
             
         </div>
         
-        <div class="written-content">
+        <!-- <div class="written-content"> -->
             <!-- title goes here -->
-            <h3 class="section-title">Evolution Record: Natural Artificial, <span class="date">2020</span></h3>
+            <!-- <h3 class="section-title">Evolution Record: Natural Artificial, <span class="date">2020</span></h3> -->
             <!-- Description goes here -->
-            <p> </p>
-        </div>
+            <!-- <p> </p> -->
+        <!-- </div> -->
 
         <!-- More work images -->
         <!-- <div class="grid-container">
@@ -105,7 +106,7 @@ ______  ______  ______     ______  __   __  _____       ______  ______  ______  
         //set this for each iframe width
         //width of the p5 sketch plus a 20-30
         //or width of iframe page
-        var BREAKPOINT = 1850;
+        var BREAKPOINT = 1750;
         //-------------------------------------------------
 
 

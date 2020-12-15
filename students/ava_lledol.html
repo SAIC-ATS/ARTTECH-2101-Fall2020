@@ -1,0 +1,219 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/artist-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,400;1,100;1,200;1,300&display=swap" rel="stylesheet"> 
+    <!-- <script src="../libs/jquery-3.5.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+
+    <style>
+
+        /* ADJUST HERE FOR EACH STUDENT */
+
+        /* Adjust the percentage here for iframe height. Percent here must be (height/width)*100 of iframe to space the title from the bottom properly. So if iframe is 500px wide and 600px tall, (600/500)*100 = 120% 
+        Also put the iframe height in pixels here and in iframe{height: } below */
+        .student-content {
+        padding-bottom: clamp(1px, 100%, 800px);
+        max-width: 800px;
+        }
+        iframe {
+            height: 800px;
+            max-width: 800px;
+        }
+    
+    </style>
+    <!-- Student name goes here -->
+    <title>Ava Lledol</title>
+
+</head>
+
+<body id="body1">
+    <div class="top-bar">
+        <a class="home" href="..">&lt;</a>
+    </div>
+    <header class="header">
+        <!-- student name goes here -->
+        <h1 class="page-title"><a href="..">Ava Lledol</a></h1> 
+        <!-- instructors names go here -->
+        <h2 class="page-subtitle">Instructors: <span>Kristin McWharter, Jenna Boyles</span></h2>
+    </header>
+     
+    <main class="main-content">
+
+        <div class="student-content">
+
+            <!-- p5 presentation link goes here -->
+            <a class="fullscreen" href="https://editor.p5js.org/alledo/present/QQB7D_4zl">fullscreen</a>
+            
+            <!-- iframe p5 embed link goes here -->
+            <iframe src="https://editor.p5js.org/alledo/embed/QQB7D_4zl"></iframe>
+            
+        </div>
+        
+        <div class="written-content">
+            <!-- title goes here -->
+            <h3 class="section-title">Play Therapy, <span class="date">2020</span></h3>
+            <!-- Description goes here -->
+            <!--<p>This is my final project analyzing the aesthetic significance of lerping. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            -->
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <h3> </h3>
+           <pre class="end">
+______  ______  ______     ______  __   __  _____       ______  ______  ______  __  __    
+/\  __ \/\  == \/\__  _\   /\  __ \/\ "-.\ \/\  __-.    /\__  _\/\  ___\/\  ___\/\ \_\ \   
+\ \  __ \ \  __<\/_/\ \/   \ \  __ \ \ \-.  \ \ \/\ \   \/_/\ \/\ \  __\\ \ \___\ \  __ \  
+\ \_\ \_\ \_\ \_\ \ \_\    \ \_\ \_\ \_\\"\_\ \____-      \ \_\ \ \_____\ \_____\ \_\ \_\ 
+\/_/\/_/\/_/\/_/  \/_/     \/_/\/_/\/_/ \/_/\/____/       \/_/  \/_____/\/_____/\/_/\/_/ 
+                                                                                
+                                                                        2020      
+           </pre>
+    </footer>
+
+
+    <script>
+        /**
+         * Scaling <iframe>-elements.
+         * 
+         * Emanuel Kluge
+         * twitter.com/Herschel_R
+         */
+         (function (win, doc) {
+        
+        /** Below this point the scaling takes effect. */
+
+        //-------------------------------------------------
+        //set this for each iframe width
+        //width of the p5 sketch plus a 20-30
+        //or width of iframe page
+        var BREAKPOINT = 820;
+        //-------------------------------------------------
+
+
+        /**
+         * The `window.resize`-callback gets throttled
+         * to an interval of 30ms.
+        */
+        var THROTTLE = 50;
+        
+        /** Just the declaration. Definition comes later. */
+        var IFRAME_HEIGHT;
+        
+        var iframe = doc.getElementsByTagName('iframe')[0],
+            timestamp = 0;
+        
+        /** Defining the inital iframe-height. */
+        IFRAME_HEIGHT = parseInt(getComputedStyle(iframe).height, 10);
+        
+        /**
+         * Takes an object with CSS-transform-properties
+         * and generates a cross-browser-ready style string.
+         *
+         * @param  {Object} obj
+         * @return {String}
+         */
+        function transformStr(obj) {
+          var obj = obj || {},
+              val = '',
+              j;
+          for ( j in obj ) {
+            val += j + '(' + obj[j] + ') ';
+          }
+          val += 'translateZ(0)';
+          return '-webkit-transform: ' + val + '; ' +
+                  '-moz-transform: ' + val + '; ' +
+                  'transform: ' + val;
+        }
+        
+        /**
+         * Scaling the iframe if necessary.
+         *
+         * @return {Function}
+         */
+        function onResize() {
+        
+          var now = +new Date,
+              winWidth = win.innerWidth,
+              noResizing = winWidth > BREAKPOINT,
+              scale, 
+              width,
+              height,
+              offsetLeft;
+          
+          if ( now - timestamp < THROTTLE || noResizing ) {
+            /** Remove the style-attr if we're out of the "scaling-zone". */
+            noResizing && iframe.hasAttribute('style') && iframe.removeAttribute('style');
+            return onResize;
+          }
+          
+          timestamp = now;
+          
+          /**
+           * The required scaling; using `Math.pow` to get
+           * a safely small enough value.
+           */
+          scale = Math.pow(winWidth / BREAKPOINT, 1.2);
+        //   scale = (winWidth-20)/BREAKPOINT;
+          /**
+           * To get the corresponding width that compensates
+           * the shrinking and thus keeps the width of the
+           * iframe consistent, we have to divide 100 by the
+           * scale. This gives us the correct value in percent.
+           */
+          width = 100 / scale;
+          
+          /**
+           * We're using the initial height and the compen-
+           * sating width to compute the compensating height
+           * in px.
+           */
+
+           //set height here for entire iframe. 
+           //if just p5 sketch, set height to p5 height plus some extra
+           //if html page, estimate total page height to show all content
+           height = IFRAME_HEIGHT;
+           //original:
+           // height = IFRAME_CONTENT / scale;
+          
+          /**
+           * We have to correct the position of the iframe,
+           * when changing its width.
+           */
+          offsetLeft = (width - 100) / 2;
+          
+          /** Setting the styles. */
+          iframe.setAttribute('style', transformStr({
+            scale: scale,
+            translateX: '-' + offsetLeft + '%'
+          }) + '; width: ' + width + '%; ' + 'height: ' + height + 'px');
+
+          return onResize;
+        
+        }
+        
+        /** Listening to `window.resize`. */
+        win.addEventListener('resize', onResize(), false);
+        
+        })(window.self, document);
+
+        //         This script, copyright 2018 Emanuel Kluge
+
+        // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+        // The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        // THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    </script>
+
+
+</body>
+</html>
